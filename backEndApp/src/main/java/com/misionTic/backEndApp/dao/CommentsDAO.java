@@ -15,4 +15,7 @@ public interface CommentsDAO extends JpaRepository<Comments, Integer>{
 	List<Comments> findCommentsByProyect(Integer proyect_id);
 
 
+	@Query(nativeQuery = true, value = "SELECT * FROM Comments WHERE project_id = 1?")
+	List<Comments> findCommeyProyect(Integer proyect_id);
+
 }
