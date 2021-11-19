@@ -1,6 +1,9 @@
 package com.misionTic.backEndApp.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +28,11 @@ public class RatingsAPI {
 	@PutMapping("/updateRating")
 	public void updateUser(@RequestBody Ratings rating) {
 		ratingsDao.save(rating);
+	}
+	
+	@GetMapping("/listar")
+	public List<Ratings> listRatings(){
+		return ratingsDao.findAll();
 	}
 
 }

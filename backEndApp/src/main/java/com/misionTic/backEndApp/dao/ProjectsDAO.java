@@ -15,4 +15,5 @@ public interface ProjectsDAO extends JpaRepository< Projects,Integer>{
 	@Query(nativeQuery = true, value = "SELECT * FROM Projects WHERE developer_id = ?1")
 	List<Projects> findProyectsByUser(Integer user_id);
 
+	// int getRatingProyect();
 }
