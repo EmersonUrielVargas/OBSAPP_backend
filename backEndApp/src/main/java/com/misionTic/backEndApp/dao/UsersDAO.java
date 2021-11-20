@@ -5,6 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.misionTic.backEndApp.model.Users;
 
 public interface UsersDAO extends JpaRepository<Users, Integer> {
+
+	void deleteUserByEmail(String email);
+
+	Users findUserByEmail(String email);
 	
 
 }

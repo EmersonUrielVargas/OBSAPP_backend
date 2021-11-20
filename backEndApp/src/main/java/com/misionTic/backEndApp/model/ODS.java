@@ -1,5 +1,6 @@
 package com.misionTic.backEndApp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,8 @@ public class ODS {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ods_id;
 	private String logoPath;
+	
+	@Column(length = 600)
 	private String descripcion;
 	
 	
