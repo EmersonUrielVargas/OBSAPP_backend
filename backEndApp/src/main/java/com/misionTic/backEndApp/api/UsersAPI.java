@@ -1,5 +1,7 @@
 package com.misionTic.backEndApp.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,10 +40,7 @@ public class UsersAPI {
 	@DeleteMapping("/deleteUser/{email}")
 	public void deleteUser(@PathVariable("email") String email) {
 		usersDao.deleteUserByEmail(email);
-
 	}
-
-
-
+	
 
 }
