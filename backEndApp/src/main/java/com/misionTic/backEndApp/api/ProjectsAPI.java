@@ -1,6 +1,7 @@
 package com.misionTic.backEndApp.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.xml.ws.Response;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.misionTic.backEndApp.dao.ProjectsDAO;
 import com.misionTic.backEndApp.model.Projects;
+import com.misionTic.backEndApp.model.Users;
 
 @RestController
 @RequestMapping("proyects")
@@ -21,6 +23,12 @@ public class ProjectsAPI {
 	
 	@Autowired
 	private ProjectsDAO proyectsDAO;
+	
+	
+	@GetMapping("/askProyect/{id}")
+	public Projects findProyectById(@PathVariable("id") int id) {
+		return proyectsDAO.getById(id);
+	}
 	
 	@GetMapping("/proyects/ods/{ods_id}")
 	public List<Projects> getProyectsByODS(@PathVariable("ods_id") int id){

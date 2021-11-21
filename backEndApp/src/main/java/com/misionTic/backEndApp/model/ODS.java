@@ -20,12 +20,9 @@ public class ODS {
 	@Column(length = 600)
 	private String descripcion;
 	
-	
-	public ODS() {
-		
+	public ODS() {	
 	}
-
-
+	
 	public String getLogoPath() {
 		return logoPath;
 	}
